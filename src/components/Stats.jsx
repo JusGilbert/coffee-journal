@@ -1,6 +1,6 @@
 function Stats ({ coffees }) {
     if (coffees.length === 0) {
-        return <p className="emppty-message">Add a coffee to see your status.</p>;
+        return <p className="empty-message">Add a coffee to see your stats.</p>;
     }
 
     const total = coffees.length;
@@ -12,7 +12,7 @@ function Stats ({ coffees }) {
 
     return (
         <section className="stats">
-            <h2>Your Status</h2>
+            <h2>Your Stats</h2>
             <p>Coffees logged: {total}</p>
             <p>Average rating: {average.toFixed(1)}</p>
             <p>
