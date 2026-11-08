@@ -169,3 +169,41 @@ h1 {
 .empty-message {
   color: #d5d9f5;
 }
+
+/* ===== Nav and stats ===== */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.nav a {
+  padding: 0.4rem 1.2rem;
+  border: 1px solid #2f3566;
+  border-radius: 999px;
+  color: #d5d9f5;
+  text-decoration: none;
+}
+
+.nav a.active {
+  background: linear-gradient(45deg, #38bdf8, #a78bfa);
+  border-color: transparent;
+  color: #0b1026;
+  font-weight: bold;
+}
+
+.stats {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1.25rem;
+  background: #161a3a;
+  border: 1px solid #2f3566;
+  border-top: 5px solid #fde68a;
+  border-radius: 12px;
+}
+
+.stats h2 {
+  margin-bottom: 0.5rem;
+  color: #7dd3fc;
+}

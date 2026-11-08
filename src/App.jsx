@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import CoffeeCard from "./components/CoffeeCard";
 import CoffeeForm from "./components/CoffeeForm";
+import { Routes, Route, NavLink } from "react-router";
+import Stats from "./components/Stats";
+
+
 
 const startingCoffees = [
   {
@@ -66,31 +70,51 @@ function App() {
   return (
     <div className="app">
       <h1>Coffee Journal</h1>
-      <CoffeeForm onAddCoffee={addCoffee} />
 
-      <label className="filter-bar">
-        Show:
-        <select
-          className="rating-filter"
-          value={minRating}
-          onChange={(event) => setMinRating(Number(event.target.value))}
-        >
-          <option value={0}>All ratings</option>
-          <option value={3}>3 and up</option>
-          <option value={4}>4 and up</option>
-          <option value={4.5}>4.5 and up</option>
-        </select>
-      </label>
+      <nav className="nav">
+        <NavLink to="/">Journal</NavLink>
+        <NavLink to="/stats">Stats</NavLink>
+      </nav>
 
-      {visibleCoffees.length === 0 ? (
-        <p className="empty-message">No coffees match that rating yet.</p>
-      ) : (
-        <div className="coffee-grid">
-          {visibleCoffees.map((coffee) => (
-            <CoffeeCard key={coffee.id} {...coffee} onDelete={deleteCoffee} />
-          ))}
-        </div>
-      )}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <CoffeeForm onAddCoffee={addCoffee} />
+
+              <label className="filter-bar">
+                Show:
+                <select
+                  className="rating-filter"
+                  value={minRating}
+                  onChange={(event) => setMinRating(Number(event.target.value))}
+                >
+                  <option value={0}>All ratings</option>
+                  <option value={3}>3 and up</option>
+                  <option value={4}>4 and up</option>
+                  <option value={4.5}>4.5 and up</option>
+                </select>
+              </label>
+
+              {visibleCoffees.length === 0 ? (
+                <p className="empty-message">No coffees match that rating yet.</p>
+              ) : (
+                <div className="coffee-grid">
+                  {visibleCoffees.map((coffee) => (
+                    <CoffeeCard
+                      key={coffee.id}
+                      {...coffee}
+                      onDelete={deleteCoffee}
+                    />
+                  ))}
+                </div>
+              )}
+            </>
+          }
+        />
+        <Route path="/stats" element={<Stats coffees={coffees} />} />
+      </Routes>
     </div>
   );
 }
