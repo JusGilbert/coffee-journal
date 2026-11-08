@@ -35,7 +35,7 @@ const startingCoffees = [
     rating: 4,
     notes:
       "Basic iced vanilla latte, but with the added creaminess of oat milk.",
-    music: "Chill music, nothing noticable",
+    music: "Chill music.",
     vibe: "It was nice and the breakfast was surprisingly good!",
   },
 ];
