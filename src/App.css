@@ -1,0 +1,138 @@
+/* ===== Page ===== */
+body {
+  background:
+    radial-gradient(1.5px 1.5px at 20% 30%, #ffffffcc, transparent),
+    radial-gradient(1px 1px at 70% 20%, #ffffff99, transparent),
+    radial-gradient(1.5px 1.5px at 40% 75%, #ffffffaa, transparent),
+    radial-gradient(1px 1px at 85% 65%, #ffffff88, transparent),
+    radial-gradient(1px 1px at 10% 85%, #ffffff77, transparent),
+    linear-gradient(170deg, #0b1026, #1b1446 60%, #2a1a5e);
+  background-attachment: fixed;
+  color: #e8eaff;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, #38bdf8, #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ===== Form ===== */
+.coffee-form {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 480px;
+  margin: 0 auto 2rem;
+  padding: 1.25rem;
+  background: #161a3a;
+  border: 1px solid #2f3566;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(56, 189, 248, 0.12);
+}
+
+.coffee-form input,
+.coffee-form textarea {
+  padding: 0.6rem 0.9rem;
+  border: 2px solid #2f3566;
+  border-radius: 8px;
+  background: #0f1230;
+  color: #e8eaff;
+  font: inherit;
+}
+
+.coffee-form input::placeholder,
+.coffee-form textarea::placeholder {
+  color: #8a90c4;
+}
+
+.coffee-form input:focus,
+.coffee-form textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+}
+
+.coffee-form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.coffee-form button {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #38bdf8, #a78bfa);
+  color: #0b1026;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.coffee-form button:hover {
+  filter: brightness(1.15);
+}
+
+/* ===== Cards ===== */
+.coffee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  text-align: left;
+}
+
+.coffee-card {
+  min-width: 0;
+  padding: 1.25rem;
+  background: #161a3a;
+  border: 1px solid #2f3566;
+  border-top: 5px solid #6ee7b7;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(56, 189, 248, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.coffee-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(167, 139, 250, 0.3);
+}
+
+.coffee-card h2 {
+  margin-bottom: 0.5rem;
+  color: #7dd3fc;
+  overflow-wrap: anywhere;
+}
+
+.coffee-card p {
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+  color: #d5d9f5;
+  overflow-wrap: anywhere;
+}
+/* ===== Delete button ===== */
+.delete-button {
+  margin-top: 0.75rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid #f9a8d4;
+  border-radius: 8px;
+  background: transparent;
+  color: #f9a8d4;
+  font: inherit;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.delete-button:hover {
+  background: #f9a8d4;
+  color: #0b1026;
+}
