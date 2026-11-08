@@ -47,26 +47,52 @@ function loadCoffees() {
 
 function App() {
   const [coffees, setCoffees] = useState(loadCoffees);
+  const [minRating, setMinRating] = useState(0);
 
   useEffect(() => {
     localStorage.setItem("coffees", JSON.stringify(coffees));
   }, [coffees]);
-  
+
   function addCoffee(coffee) {
     setCoffees([...coffees, { ...coffee, id: Date.now() }]);
   }
-    function deleteCoffee(id) {
-      setCoffees(coffees.filter((coffee) => coffee.id !== id));
-    }
-  
+
+  function deleteCoffee(id) {
+    setCoffees(coffees.filter((coffee) => coffee.id !== id));
+  }
+
+  const visibleCoffees = coffees.filter((coffee) => coffee.rating >= minRating);
+
   return (
     <div className="app">
       <h1>Coffee Journal</h1>
       <CoffeeForm onAddCoffee={addCoffee} />
-      {coffees.map((coffee) => (
-        <CoffeeCard key={coffee.id} {...coffee} onDelete={deleteCoffee} />
-      ))}
+
+      <label className="filter-bar">
+        Show:
+        <select
+          className="rating-filter"
+          value={minRating}
+          onChange={(event) => setMinRating(Number(event.target.value))}
+        >
+          <option value={0}>All ratings</option>
+          <option value={3}>3 and up</option>
+          <option value={4}>4 and up</option>
+          <option value={4.5}>4.5 and up</option>
+        </select>
+      </label>
+
+      {visibleCoffees.length === 0 ? (
+        <p className="empty-message">No coffees match that rating yet.</p>
+      ) : (
+        <div className="coffee-grid">
+          {visibleCoffees.map((coffee) => (
+            <CoffeeCard key={coffee.id} {...coffee} onDelete={deleteCoffee} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
+
 export default App;

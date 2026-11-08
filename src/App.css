@@ -99,7 +99,9 @@ h1 {
   border-top: 5px solid #6ee7b7;
   border-radius: 12px;
   box-shadow: 0 6px 24px rgba(56, 189, 248, 0.12);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .coffee-card:hover {
@@ -129,10 +131,41 @@ h1 {
   color: #f9a8d4;
   font: inherit;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .delete-button:hover {
   background: #f9a8d4;
   color: #0b1026;
+}
+
+/* ===== Rating filter ===== */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: #d5d9f5;
+}
+
+.rating-filter {
+  padding: 0.5rem 0.9rem;
+  border: 2px solid #2f3566;
+  border-radius: 8px;
+  background: #0f1230;
+  color: #e8eaff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.rating-filter:focus {
+  outline: none;
+  border-color: #38bdf8;
+}
+
+.empty-message {
+  color: #d5d9f5;
 }
