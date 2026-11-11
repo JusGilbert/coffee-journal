@@ -11,7 +11,7 @@ const startingCoffees = [
   {
     id: 1,
     name: "Saigon Cinnamon",
-    place: "Offbeat Coffee",
+    place: "Fav Local Coffee Shop",
     rating: 4.5,
     notes:
       "A delightful blend of cinnamon and coffee, perfect for a cozy morning.",
@@ -31,7 +31,7 @@ const startingCoffees = [
   {
     id: 3,
     name: "Iced Vanilla Latte with Oat Milk",
-    place: "Mast",
+    place: "Third Fav Coffee Shop",
     rating: 4,
     notes:
       "Basic iced vanilla latte, but with the added creaminess of oat milk.",
